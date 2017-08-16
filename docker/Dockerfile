@@ -41,12 +41,11 @@ RUN apt-get update \
 RUN pip3 install -U pip six
 RUN pip3 --no-cache-dir install -U jupyter
 
-# Create nakkat user with UID=1000 and in the 'users' group
+# Create py-deep user with UID=1000 and in the 'users' group
 RUN useradd -m -s /bin/bash -N -u $NB_UID $NB_USER \
     && mkdir -p /src \
     && chown $NB_USER /src
 
-# dotfiles
 RUN mkdir -p /src/py-deep-samples \
     && git clone https://github.com/nakkat/py-deep-samples.git /src/py-deep-samples
 
