@@ -48,7 +48,7 @@ RUN useradd -m -s /bin/bash -N -u $NB_UID $NB_USER \
 
 RUN mkdir -p /src/py-deep-samples \
     && git clone https://github.com/nakkat/py-deep-samples.git /src/py-deep-samples \
-    && pip install git+https://github.com/nakkat/py-deep-samples.git
+    && pip3 install git+https://github.com/nakkat/py-deep-samples.git
 
 WORKDIR $WORK_DIR
 USER $NB_USER
